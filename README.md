@@ -12,11 +12,14 @@ Deep learning project implementing configurable feedforward neural networks from
 
 1. Open `JAXNet_Colab_Single_Run.ipynb` in Google Colab or VS Code with Colab extension
 2. Run all cells to train the model and generate:
-   - Training curves
+   - Training curves (loss & accuracy)
    - Confusion matrix
    - Misclassification analysis
 
 **That's it!** This notebook contains our final optimized model with all hyperparameters pre-configured.
+
+**Note:** If you want to generate training plots beyond the confusion matrix and misclassification analysis, set `use_wandb=True` in the notebook and provide your WandB API key when prompted. Familiarity with [Weights & Biases](https://wandb.ai) is expected for advanced logging and visualisation features.
+
 
 ---
 
