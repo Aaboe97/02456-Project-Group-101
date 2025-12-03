@@ -2,32 +2,85 @@
 
 ## EMNIST Balanced Character Recognition with JAX
 
-This repository contains our implementation of a flexible feedforward neural network built from scratch using JAX for the DTU course 02456 Deep Learning.
+Deep learning project implementing configurable feedforward neural networks from scratch for EMNIST Balanced character recognition (47 classes: digits + letters). Features comprehensive hyperparameter optimisation and performance analysis.
 
-DTU Course 02456 Deep Learning project implementing a configurable JAX neural network for EMNIST Balanced character recognition. Includes hyperparameter optimization via Weights &amp; Biases sweeps and comprehensive performance analysis.
+---
 
+## 🚀 Quick Start
 
-### Key Features
-- Custom JAX-based neural network with configurable architecture
-- Support for multiple activation functions (ReLU, Tanh, Sigmoid)
-- Multiple optimizers (SGD, Adam, RMSprop)
-- Regularization techniques (Dropout, L2 weight decay, Gradient clipping)
-- Hyperparameter optimization using Weights & Biases Bayesian sweeps
-- EMNIST Balanced dataset (47 character classes: digits + letters)
-- Comprehensive evaluation with confusion matrix analysis
+**To reproduce our best model (86.86% test accuracy):**
 
-### Best Model Performance
-- **Test Accuracy:** 87.12%
-- **Architecture:** [512, 512, 512] with ReLU activation
-- **Optimizer:** Adam with learning rate 0.358
-- **Regularization:** Dropout (0.046), L2 (1e-8)
+1. Open `JAXNet_Colab_Single_Run.ipynb` in Google Colab or VS Code with Colab extension
+2. Run all cells to train the model and generate:
+   - Training curves
+   - Confusion matrix
+   - Misclassification analysis
 
-### Project Structure
-- `JAXNet.py` - Core neural network implementation
-- `JAXNet_E47B_Sweep.py` - Hyperparameter sweep script
-- `JAXNet_Colab_Single_Run.ipynb` - Best model training and evaluation
-- Results and analysis notebooks
+**That's it!** This notebook contains our final optimized model with all hyperparameters pre-configured.
 
-**Course:** 02456 Deep Learning, DTU  
-**Group:** 101  
-**Semester:** Fall 2025
+---
+
+## 📁 Repository Structure
+
+### Core Implementations
+
+| File | Description |
+|------|-------------|
+| **`JAXNet.py`** | Core neural network module with JAX (base class, training loop, evaluation) |
+| **`PyNet.py`** | Core neural network module with NumPy (alternative implementation) |
+
+### EMNIST Balanced (47 classes) - JAX Implementation
+
+| File | Description |
+|------|-------------|
+| **`JAXNet_E47B.py`** | EMNIST Balanced standalone script (single run) |
+| **`JAXNet_E47B_Sweep.py`** | EMNIST Balanced hyperparameter sweep script |
+| **`JAXNet_Colab_Runner.ipynb`** | Notebook for running EMNIST sweeps in Colab |
+| **`JAXNet_Colab_Single_Run.ipynb`** | ⭐ **Best model training + evaluation + confusion matrix** |
+
+### EMNIST Balanced (47 classes) - NumPy Implementation
+
+| File | Description |
+|------|-------------|
+| **`PyNet_E47B.py`** | EMNIST Balanced standalone script (single run) |
+| **`PyNet_E47B_sweep.py`** | EMNIST Balanced hyperparameter sweep script |
+| **`PyNet_Colab_Runner.ipynb`** | Notebook for running EMNIST sweeps in Colab |
+
+### MNIST (10 classes) - Comparison Implementations
+
+| File | Description |
+|------|-------------|
+| **`JAXNet_M10.py`** | MNIST standalone script (JAX) |
+| **`JAXNet_M10_Sweep.py`** | MNIST hyperparameter sweep (JAX) |
+| **`PyNet_M10.py`** | MNIST standalone script (NumPy) |
+| **`PyNet_M10_Sweep.py`** | MNIST hyperparameter sweep (NumPy) |
+
+### Configuration
+
+| File | Description |
+|------|-------------|
+| **`sweep_config.yaml`** | WandB sweep configuration (Bayesian optimization) |
+
+---
+
+## 🎯 Best Model Performance
+
+Achieved through Bayesian hyperparameter optimization (36 runs):
+
+- **Test Accuracy:** 86.86%
+- **Architecture:** 3 hidden layers [512, 512, 512]
+- **Activation:** ReLU
+- **Weight Init:** He initialization
+- **Optimizer:** Adam (lr=0.358)
+- **Regularization:** Dropout (p=0.046), L2 (λ=1e-8)
+- **Batch Size:** 512
+- **Training:** 100 epochs
+
+---
+
+## 🔧 Setup & Usage
+
+### Prerequisites
+
+```bash
+pip install jax jaxlib numpy tensorflow-datasets wandb scikit-learn matplotlib
