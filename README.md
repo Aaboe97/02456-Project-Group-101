@@ -1,9 +1,17 @@
-# 02456 Deep Learning - Project Group 101
+# 02456 Deep Learning Project - Group 101
 
-## EMNIST Balanced Character Recognition with JAX
+## EMNIST Balanced Character Recognition with JAX & NumPy
 
-Deep learning project implementing configurable feedforward neural networks from scratch for EMNIST Balanced character recognition (47 classes: digits + letters). Features comprehensive hyperparameter optimisation and performance analysis.
+Group project at the Technical University of Denmark (DTU) for the course 02456 Deep Learning, Fall 2025, 
 
+This project implemented a configurable feedforward neural network from scratch for EMNIST Balanced character recognition (47 classes: digits + letters). Furthermore, the project features comprehensive hyperparameter optimisation and performance analysis utilising WandB.
+
+Group 101:
+- Mathias - s204156
+- Oliver - s214500
+- Anders - s214509
+- Constance - s214510
+  
 ---
 
 ## 🚀 Quick Start
@@ -12,11 +20,11 @@ Deep learning project implementing configurable feedforward neural networks from
 
 1. Open `JAXNet_Colab_Single_Run.ipynb` in Google Colab or VS Code with Colab extension
 2. Run all cells to train the model and generate:
-   - Training curves (loss & accuracy)
+   - Training curves (WandB required)
    - Confusion matrix
    - Misclassification analysis
 
-**That's it!** This notebook contains our final optimized model with all hyperparameters pre-configured.
+**That's it!** This notebook contains our final optimised model with all hyperparameters pre-configured.
 
 **Note:** If you want to generate training plots beyond the confusion matrix and misclassification analysis, set `use_wandb=True` in the notebook and provide your WandB API key when prompted. Familiarity with [Weights & Biases](https://wandb.ai) is expected for advanced logging and visualisation features.
 
