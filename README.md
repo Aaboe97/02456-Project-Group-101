@@ -2,9 +2,9 @@
 
 ## EMNIST Balanced Character Recognition with JAX & NumPy
 
-Group project at the Technical University of Denmark (DTU) for the course 02456 Deep Learning, Fall 2025, 
+Group project at the Technical University of Denmark (DTU) for the course 02456 Deep Learning, Fall 2025.
 
-This project implemented a configurable feedforward neural network from scratch for EMNIST Balanced character recognition (47 classes: digits + letters). Furthermore, the project features comprehensive hyperparameter optimisation and performance analysis utilising WandB.
+This project implemented a configurable feedforward neural network from scratch for EMNIST Balanced character recognition, which includes 47 classes (digits and letters), and further features comprehensive hyperparameter optimisation and performance analysis utilising WandB.
 
 Group 101:
 - Mathias - s204156
